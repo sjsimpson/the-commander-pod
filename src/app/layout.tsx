@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans ${poppins.variable} flex min-h-screen flex-col items-center`}
+        className={`font-sans ${poppins.variable} flex min-h-screen flex-col items-center overflow-x-hidden`}
       >
         <TRPCReactProvider>
           <Header />
