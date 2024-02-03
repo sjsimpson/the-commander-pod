@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const cardRouter = createTRPCRouter({
   getRandomCard: publicProcedure.query(async () => {
-    const query = "is:commander colors<=2 -is:digital -st:unset";
+    const query = "is:commander colors<=2 -is:digital -set_type:funny";
 
     let hasLargeImage = false;
     let card: Card;

@@ -50,7 +50,7 @@ function DualColorCommanderText({
   return (
     <span
       className={clsx(
-        "bg-gradient-to-r from-w to-b bg-clip-text text-transparent",
+        "bg-gradient-to-r bg-clip-text text-transparent",
         FROM[from],
         TO[to],
       )}

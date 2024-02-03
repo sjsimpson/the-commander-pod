@@ -3,12 +3,14 @@ import "~/styles/globals.css";
 import { Poppins } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import { Header } from "./_components/Header";
+import { Header } from "./_components/header";
+import { Footer } from "./_components/footer";
 
 const poppins = Poppins({
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata = {
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans ${poppins.variable} flex min-h-screen flex-col items-center overflow-x-hidden`}
+        className={`font-sans ${poppins.className} flex min-h-screen flex-col items-center overflow-x-hidden`}
       >
         <TRPCReactProvider>
           <Header />
