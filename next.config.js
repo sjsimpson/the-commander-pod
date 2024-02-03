@@ -5,6 +5,10 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "cards.scryfall.io" }],
+  },
+};
 
 export default config;
