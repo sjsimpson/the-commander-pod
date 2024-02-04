@@ -9,7 +9,9 @@ export function Header() {
         <Image src="/logo.svg" alt="logo" height={80} width={120} />
       </div>
       <PrimaryNav />
-      <Button size="header">SUBSCRIBE</Button>
+      <Button size="header" className="text-sm font-bold">
+        SUBSCRIBE
+      </Button>
     </div>
   );
 }

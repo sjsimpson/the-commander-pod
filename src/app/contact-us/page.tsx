@@ -31,7 +31,9 @@ export default async function ContactUs() {
                   </p>
                 </div>
                 <div>
-                  <Button>Send us an email</Button>
+                  <Button className="flex h-fit rounded-2xl bg-black px-6 py-4 text-lg font-bold w-fit hover:bg-black/90">
+                    Send us an email
+                  </Button>
                 </div>
               </div>
               <div className="relative flex h-[440px] w-[440px]">
