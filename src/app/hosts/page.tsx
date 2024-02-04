@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Footer } from "../_components/footer";
 
-export default async function Hosts() {
+export default function Hosts() {
   return (
     <>
       <main className="mt-10 flex flex-col">

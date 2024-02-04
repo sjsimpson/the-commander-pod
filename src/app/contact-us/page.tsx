@@ -4,6 +4,9 @@ import { Button } from "~/components/ui/button";
 import { Footer } from "../_components/footer";
 import { CardImage } from "../card-image";
 
+// WARN: This is a bandaid solution for current TRPC problems
+export const dynamic = "force-dynamic";
+
 export default async function ContactUs() {
   const card1 = await api.card.getRandomCard.query({
     query: "geralf's messenger type:creature",

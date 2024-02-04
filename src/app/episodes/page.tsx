@@ -2,7 +2,7 @@ import { Footer } from "../_components/footer";
 import { YouTubeButton } from "../_components/youtube-button";
 import { SpotifyButton } from "../_components/spotify-button";
 
-export default async function Episodes() {
+export default function Episodes() {
   return (
     <>
       <main className="mt-10 flex flex-col">
