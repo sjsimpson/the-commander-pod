@@ -4,7 +4,6 @@ import { Poppins } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { Header } from "./_components/header";
-import { Footer } from "./_components/footer";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

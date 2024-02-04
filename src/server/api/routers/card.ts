@@ -1,28 +1,29 @@
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 import axios from "axios";
+import { z } from "zod";
 
 export const cardRouter = createTRPCRouter({
-  getRandomCard: publicProcedure.query(async () => {
-    const query = "is:commander colors<=2 -is:digital -set_type:funny";
+  getRandomCard: publicProcedure
+    .input(z.object({ query: z.string() }))
+    .query(async ({ input }) => {
+      let hasLargeImage = false;
+      let card: Card;
 
-    let hasLargeImage = false;
-    let card: Card;
-
-    do {
-      const scryfallResponse = await axios.get<Card>(
-        "https://api.scryfall.com/cards/random",
-        {
-          params: {
-            q: query,
+      do {
+        const scryfallResponse = await axios.get<Card>(
+          "https://api.scryfall.com/cards/random",
+          {
+            params: {
+              q: input.query,
+            },
           },
-        },
-      );
-      card = scryfallResponse.data;
-      hasLargeImage = Boolean(scryfallResponse.data.image_uris?.large);
-    } while (!hasLargeImage);
+        );
+        card = scryfallResponse.data;
+        hasLargeImage = Boolean(scryfallResponse.data.image_uris?.large);
+      } while (!hasLargeImage);
 
-    return card;
-  }),
+      return card;
+    }),
 });
 
 const cardColors = ["W", "U", "B", "R", "G"] as const;

@@ -8,7 +8,9 @@ import { Footer } from "./_components/footer";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const card = await api.card.getRandomCard.query();
+  const card = await api.card.getRandomCard.query({
+    query: "is:commander colors<=2 -is:digital -set_type:funny",
+  });
 
   return (
     <>
@@ -20,13 +22,17 @@ export default async function Home() {
                 THE PODCAST FOR ALL THINGS{" "}
                 <CommanderText colors={card?.colors} />
               </p>
-              <CardImage card={card} />
+              <div className="absolute -right-20 z-10 h-fit w-fit items-center justify-center">
+                <CardImage card={card} width={320} height={446} />
+              </div>
             </div>
             <div className="absolute -right-2/3 top-1/4 h-[1052px] w-full rounded-l-full bg-black" />
           </div>
         </section>
         <section className="z-10 mt-40 flex w-screen flex-col items-center justify-center gap-16 bg-gray-200 pb-32 pt-20">
-          <div>Our Most Recent Video</div>
+          <div className="rounded-full bg-[#FF0000] px-6 py-2 text-2xl font-bold text-white">
+            Our Most Recent Video
+          </div>
           <iframe
             className="rounded-xl"
             width="560"

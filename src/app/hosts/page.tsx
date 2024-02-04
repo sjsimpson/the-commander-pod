@@ -16,9 +16,9 @@ export default async function Hosts() {
             />
             <div className="mb-[76px] flex w-[991px] flex-col self-end">
               <div className="mr-[330px] flex flex-row-reverse">
-                <h2 className="text-5xl font-extrabold">KELTSON HOWELL</h2>
+                <h2 className="text-5xl font-black">KELTSON HOWELL</h2>
               </div>
-              <p className="mt-5 w-[560px] font-medium">
+              <p className="mt-10 w-[560px] font-medium">
                 Keltson Howell has been playing Magic for over a decade. He
                 bought his first booster in Brno, Czechia and has been hooked
                 ever since. His favorite formats are commander and limited, and
@@ -38,11 +38,13 @@ export default async function Hosts() {
             />
             <div className="mb-[76px] flex w-[991px] flex-col self-end">
               <div className="z-10 ml-[279px] flex flex-row">
-                <h2 className="text-5xl font-extrabold">SPENCER SIMPSON</h2>
+                <h2 className="text-5xl font-black">SPENCER SIMPSON</h2>
               </div>
-              <p className="ml-[530px] mt-5 w-[560px] font-medium">
+              <p className="ml-[530px] mt-10 w-[560px] font-medium">
                 Spencer Simpson started playing Magic in 2018. He primarily
                 plays commander and limited, and is currently getting into cEDH.
+              </p>
+              <p className="ml-[530px] w-[560px] font-medium">
                 His favorite color combination is Sultai, but he will happily
                 play anything besides Boros and Selesnya.
               </p>
