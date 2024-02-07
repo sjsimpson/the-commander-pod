@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "clean": "rm -rf node_modules",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write . --cache --cache-location='node_modules/.cache/.prettiercache'"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
@@ -43,6 +45,7 @@
     "postcss": "^8.4.31",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
+    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.1.6"
   },

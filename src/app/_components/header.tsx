@@ -1,6 +1,8 @@
-import { PrimaryNav } from "./primary-nav";
-import { Button } from "~/components/ui/button";
 import Image from "next/image";
+
+import { Button } from "~/components/ui/button";
+
+import { PrimaryNav } from "./primary-nav";
 
 export function Header() {
   return (

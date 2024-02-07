@@ -1,5 +1,6 @@
-import type { Card, CardColor } from "~/server/api/routers/card";
 import clsx from "clsx";
+
+import type { Card, CardColor } from "~/server/api/routers/card";
 
 export function CommanderText({ colors }: { colors?: Card["colors"] }) {
   if (!colors) return <span>COMMANDER</span>;
@@ -21,6 +22,7 @@ export function CommanderText({ colors }: { colors?: Card["colors"] }) {
   if (isSimic(colors)) return <DualColorCommanderText from="G" to="U" />;
   if (isRakdos(colors)) return <DualColorCommanderText from="B" to="R" />;
   if (isGolgari(colors)) return <DualColorCommanderText from="B" to="G" />;
+  if (isGruul(colors)) return <DualColorCommanderText from="R" to="G" />;
 
   return <span className={SOLID[colors[0]!]}>COMMANDER</span>;
 }
@@ -94,4 +96,8 @@ function isRakdos(colors: Card["colors"]) {
 
 function isGolgari(colors: Card["colors"]) {
   return colors.includes("B") && colors.includes("G");
+}
+
+function isGruul(colors: Card["colors"]) {
+  return colors.includes("R") && colors.includes("G");
 }

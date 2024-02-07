@@ -1,6 +1,6 @@
 import { Footer } from "../_components/footer";
-import { YouTubeButton } from "../_components/youtube-button";
 import { SpotifyButton } from "../_components/spotify-button";
+import { YouTubeButton } from "../_components/youtube-button";
 
 export default function Episodes() {
   return (

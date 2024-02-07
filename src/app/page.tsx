@@ -1,8 +1,8 @@
 import { api } from "~/trpc/server";
 
+import { Footer } from "./_components/footer";
 import { CardImage } from "./card-image";
 import { CommanderText } from "./commander-text";
-import { Footer } from "./_components/footer";
 
 // WARN: This is a bandaid solution for current TRPC problems
 export const dynamic = "force-dynamic";

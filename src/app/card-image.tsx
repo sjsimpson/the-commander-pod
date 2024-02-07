@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import type { Card } from "~/server/api/routers/card";
 
 export function CardImage({

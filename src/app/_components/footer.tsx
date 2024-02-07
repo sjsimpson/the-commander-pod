@@ -1,5 +1,6 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import Image from "next/image";
+
 import { SpotifyButton } from "./spotify-button";
 import { YouTubeButton } from "./youtube-button";
 

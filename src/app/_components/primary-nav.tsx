@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
-
+import { clsx } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { clsx } from "clsx";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 const NAVLINKS = [
   {

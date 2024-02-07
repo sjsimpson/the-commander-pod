@@ -1,6 +1,6 @@
+import { Button } from "~/components/ui/button";
 import { api } from "~/trpc/server";
 
-import { Button } from "~/components/ui/button";
 import { Footer } from "../_components/footer";
 import { CardImage } from "../card-image";
 
@@ -31,7 +31,7 @@ export default async function ContactUs() {
                   </p>
                 </div>
                 <div>
-                  <Button className="flex h-fit rounded-2xl bg-black px-6 py-4 text-lg font-bold w-fit hover:bg-black/90">
+                  <Button className="flex h-fit w-fit rounded-2xl bg-black px-6 py-4 text-lg font-bold hover:bg-black/90">
                     Send us an email
                   </Button>
                 </div>
