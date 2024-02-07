@@ -98,26 +98,18 @@ function NavLink(props: NavLinkProps) {
 
   useEffect(() => {
     if (match) {
-      handleGainActive();
+      setActive(true);
+
+      if (linkRef.current) {
+        const offset = linkRef.current.offsetLeft;
+        const width = linkRef.current.offsetWidth;
+
+        setActiveState(offset, width);
+      }
     } else {
-      handleLoseActive();
+      setActive(false);
     }
-  }, [match]);
-
-  const handleGainActive = () => {
-    setActive(true);
-
-    if (linkRef.current) {
-      const offset = linkRef.current.offsetLeft;
-      const width = linkRef.current.offsetWidth;
-
-      setActiveState(offset, width);
-    }
-  };
-
-  const handleLoseActive = () => {
-    setActive(false);
-  };
+  }, [match, setActiveState]);
 
   useEffect(() => {
     if (!hovered && linkRef.current?.offsetLeft === hoverOffset) {
@@ -128,7 +120,7 @@ function NavLink(props: NavLinkProps) {
 
       return () => clearTimeout(timeout);
     }
-  }, [hovered, hoverOffset]);
+  }, [hovered, hoverOffset, setHoverState]);
 
   const handleMouseEnter = () => {
     setHovered(true);
