@@ -32,7 +32,9 @@ export default async function ContactUs() {
                 </div>
                 <div>
                   <Button className="flex h-fit w-fit rounded-2xl bg-black px-6 py-4 text-lg font-bold hover:bg-black/90">
-                    Send us an email
+                    <a href="mailto:spencer@thecommanderpod.com">
+                      Send us an email
+                    </a>
                   </Button>
                 </div>
               </div>

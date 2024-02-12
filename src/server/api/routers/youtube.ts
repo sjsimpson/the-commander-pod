@@ -15,7 +15,7 @@ export const youtubeRouter = createTRPCRouter({
         params: {
           key: apiKey,
           part: "contentDetails,snippet",
-          id: "UCLsiaNUb42gRAP7ewbJ0ecQ",
+          id: "UCOwX8yocmkjkJ3hCbwNY7Xg",
         },
       },
     );

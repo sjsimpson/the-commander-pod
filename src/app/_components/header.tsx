@@ -27,7 +27,13 @@ function DesktopHeader() {
         </div>
         <PrimaryNav />
         <Button size="header" className="text-sm font-bold">
-          SUBSCRIBE
+          <a
+            href="https://www.youtube.com/@TheCommanderPod"
+            className="cursor-pointer"
+            target="_blank"
+          >
+            SUBSCRIBE
+          </a>
         </Button>
       </div>
     </div>
