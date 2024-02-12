@@ -8,10 +8,14 @@ export function SpotifyButton() {
       size="header"
       className="bg-green-500 text-accent-foreground hover:bg-green-500/90"
     >
-      <div className="flex flex-row items-center justify-center gap-2">
+      <a
+        href="https://open.spotify.com/show/2R8oP4tL7rIxXk9CBTtTJP"
+        target="_blank"
+        className="flex flex-row items-center justify-center gap-2"
+      >
         <Image src="/spotify.svg" alt="Spotify Icon" height={20} width={20} />
         <span>Listen on Spotify</span>
-      </div>
+      </a>
     </Button>
   );
 }

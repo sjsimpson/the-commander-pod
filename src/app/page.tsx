@@ -35,7 +35,7 @@ export default async function Home() {
           </div>
           <iframe
             className="rounded-xl sm:h-[315px] sm:w-[560px]"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=KHYuFMl7AL377jF8"
+            src="https://www.youtube.com/embed/RCxyBAxMAtc?si=diDICAagtqAUMyjq"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

@@ -10,7 +10,7 @@ export default function Episodes() {
           <div className="relative flex w-[1200px] flex-col items-center justify-center gap-10 pb-32 pt-20">
             <iframe
               className="rounded-xl sm:h-[315px] sm:w-[560px]"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=KHYuFMl7AL377jF8"
+              src="https://www.youtube.com/embed/RCxyBAxMAtc?si=diDICAagtqAUMyjq"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -22,10 +22,10 @@ export default function Episodes() {
           <div className="relative flex w-[1200px] flex-col items-center justify-center gap-10 pb-32 pt-20">
             <iframe
               className="rounded-xl sm:h-[315px] sm:w-[560px]"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=KHYuFMl7AL377jF8"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              src="https://open.spotify.com/embed/episode/6XVagynY9KShPvCODjnOrV/video?utm_source=generator"
               allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
             />
             <SpotifyButton />
           </div>
