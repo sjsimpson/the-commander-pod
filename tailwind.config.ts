@@ -14,6 +14,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
+        xs: "520px",
         "2xl": "1400px",
       },
     },
@@ -76,6 +77,13 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      spacing: {
+        "content-md": "800px",
+        "content-2xl": "1200px",
+      },
+      screens: {
+        md: "848px",
       },
     },
   },

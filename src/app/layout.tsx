@@ -27,12 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans ${poppins.className} flex min-h-screen flex-col items-center overflow-x-hidden`}
+        className={`font-sans ${poppins.className} flex h-screen w-screen flex-col`}
       >
-        <TRPCReactProvider>
-          <Header />
-          {children}
-        </TRPCReactProvider>
+        <main className="flex h-screen w-screen flex-col items-center overflow-x-hidden">
+          <TRPCReactProvider>
+            <Header />
+            {children}
+          </TRPCReactProvider>
+        </main>
       </body>
     </html>
   );

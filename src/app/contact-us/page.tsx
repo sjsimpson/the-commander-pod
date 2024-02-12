@@ -2,7 +2,7 @@ import { Button } from "~/components/ui/button";
 import { api } from "~/trpc/server";
 
 import { Footer } from "../_components/footer";
-import { CardImage } from "../card-image";
+import { CardImage } from "./card-image";
 
 // WARN: This is a bandaid solution for current TRPC problems
 export const dynamic = "force-dynamic";
@@ -17,11 +17,11 @@ export default async function ContactUs() {
 
   return (
     <>
-      <main className="mt-10 flex flex-col">
+      <div className="mt-10 flex flex-col">
         <section className="relative flex w-screen justify-center">
-          <div className="relative flex w-[1200px] flex-col items-center justify-center gap-10 pt-20">
-            <div className="mt-20 flex flex-row gap-20">
-              <div className="flex w-[560px] flex-col gap-14">
+          <div className="relative flex flex-col items-center justify-center gap-10 pt-20 md:w-content-md 2xl:w-content-2xl">
+            <div className="mb-20 flex flex-col gap-40 2xl:mt-20 2xl:flex-row 2xl:gap-20">
+              <div className="flex flex-col gap-14 px-5 sm:w-[560px] sm:px-0">
                 <div className="flex flex-col gap-4">
                   <h2 className="text-5xl font-black">GET IN TOUCH</h2>
                   <p className="font-medium">
@@ -36,18 +36,18 @@ export default async function ContactUs() {
                   </Button>
                 </div>
               </div>
-              <div className="relative flex h-[440px] w-[440px]">
+              <div className="relative hidden h-[440px] w-[440px] 2xl:flex">
                 <div className="absolute -top-20 left-10 -rotate-12">
-                  <CardImage card={card1} height={360} width={258} />
+                  <CardImage card={card1} />
                 </div>
                 <div className="absolute -top-5 left-44 rotate-12">
-                  <CardImage card={card2} height={360} width={258} />
+                  <CardImage card={card2} />
                 </div>
               </div>
             </div>
           </div>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

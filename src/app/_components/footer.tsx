@@ -34,7 +34,7 @@ export function Footer(props: FooterProps) {
             <span>SUBSCRIBE TO OUR PODCAST • SUBSCRIBE TO OUR PODCAST</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-8">
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <SpotifyButton />
               <YouTubeButton />
             </div>

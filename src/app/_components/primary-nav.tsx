@@ -5,21 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-const NAVLINKS = [
-  {
-    href: "/",
-    title: "Home",
-  },
-  {
-    href: "/hosts",
-    title: "The Hosts",
-  },
-  {
-    href: "/episodes",
-    title: "Episodes",
-  },
-  { href: "/contact-us", title: "Contact Us" },
-];
+import { NAVLINKS } from "~/lib/links";
 
 export function PrimaryNav() {
   const [hoverOffset, setHoverOffset] = useState<number | undefined>(undefined);
@@ -43,7 +29,7 @@ export function PrimaryNav() {
   };
 
   return (
-    <div className="flex flex-row gap-6 rounded-2xl bg-[#242424] px-4 py-2">
+    <div className="flex flex-row gap-1 rounded-2xl bg-[#242424] px-4 py-2 lg:gap-6">
       {NAVLINKS.map((link) => (
         <NavLink
           key={link.href}

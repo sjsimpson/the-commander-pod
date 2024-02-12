@@ -1,25 +1,31 @@
+"use client";
+
 import Image from "next/image";
+
+import { breakpoints, useMediaQuery } from "~/lib/useMediaQuery";
 
 import { Footer } from "../_components/footer";
 
 export default function Hosts() {
+  const xxl = useMediaQuery(breakpoints.xxl);
+
   return (
     <>
-      <main className="mt-10 flex flex-col">
-        <section className="relative flex h-[460px] w-screen justify-center">
-          <div className="relative flex w-[1200px] flex-row-reverse">
+      <div className="mt-10 flex flex-col">
+        <section className="relative flex w-screen justify-center pt-20 md:pt-48">
+          <div className="relative flex w-2/3 flex-row-reverse md:w-content-md 2xl:w-content-2xl">
             <Image
-              className="absolute bottom-0"
+              className="absolute bottom-0 hidden md:flex"
               src="/keltson.png"
               alt="Keltson Howell"
               height={380}
               width={391}
             />
-            <div className="mb-[76px] flex w-[991px] flex-col self-end">
-              <div className="mr-[330px] flex flex-row-reverse">
+            <div className="mb-[76px] flex flex-col self-end 2xl:w-[991px]">
+              <div className="flex flex-row-reverse md:mr-[330px]">
                 <h2 className="text-5xl font-black">KELTSON HOWELL</h2>
               </div>
-              <p className="mt-10 w-[560px] font-medium">
+              <p className="mt-10 font-medium md:w-1/2 2xl:w-[560px]">
                 Keltson Howell has been playing Magic for over a decade. He
                 bought his first booster in Brno, Czechia and has been hooked
                 ever since. His favorite formats are commander and limited, and
@@ -28,31 +34,29 @@ export default function Hosts() {
             </div>
           </div>
         </section>
-        <section className="relative flex h-[569px] w-screen justify-center bg-black pt-20 text-white">
-          <div className="relative flex w-[1200px] flex-row">
+        <section className="relative flex w-screen justify-center bg-black pt-20 text-white md:pt-48 2xl:pt-72">
+          <div className="relative flex w-2/3 flex-row md:w-content-md 2xl:w-content-2xl">
             <Image
-              className="absolute bottom-0"
+              className="absolute bottom-0 hidden md:flex"
               src="/spencer.png"
               alt="Spencer Simpson"
-              height={489}
-              width={490}
+              height={xxl ? 489 : 380}
+              width={xxl ? 490 : 380}
             />
-            <div className="mb-[76px] flex w-[991px] flex-col self-end">
-              <div className="z-10 ml-[279px] flex flex-row">
+            <div className="mb-[76px] flex flex-col self-end 2xl:w-[991px]">
+              <div className="z-10 flex flex-row md:ml-[279px]">
                 <h2 className="text-5xl font-black">SPENCER SIMPSON</h2>
               </div>
-              <p className="ml-[530px] mt-10 w-[560px] font-medium">
+              <p className="mt-10 font-medium md:ml-[400px] md:w-1/2 2xl:ml-[530px] 2xl:w-[560px]">
                 Spencer Simpson started playing Magic in 2018. He primarily
                 plays commander and limited, and is currently getting into cEDH.
-              </p>
-              <p className="ml-[530px] w-[560px] font-medium">
                 His favorite color combination is Sultai, but he will happily
                 play anything besides Boros and Selesnya.
               </p>
             </div>
           </div>
         </section>
-      </main>
+      </div>
       <Footer style="light" />
     </>
   );
