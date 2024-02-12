@@ -1,9 +1,9 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 import { SpotifyButton } from "./spotify-button";
 import { YouTubeButton } from "./youtube-button";
-import Marquee from "react-fast-marquee"
 
 const FooterVariants = cva(
   "z-10 flex w-screen flex-col items-center justify-center gap-20 pb-32 pt-20",
@@ -31,7 +31,7 @@ export function Footer(props: FooterProps) {
     <footer>
       {!hideBanner && (
         <section className={FooterVariants({ style })}>
-          <div className="flex h-[72px] w-full items-center justify-center text-center text-5xl font-bold overflow-hidden text-nowrap">
+          <div className="flex h-[72px] w-full items-center justify-center overflow-hidden text-nowrap text-center text-5xl font-bold">
             <Marquee autoFill>
               <span>SUBSCRIBE TO OUR PODCAST</span>
               <span className="px-3">•</span>
