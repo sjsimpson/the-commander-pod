@@ -5,14 +5,14 @@ import Link from "next/link";
 import { NAVLINKS } from "~/lib/links";
 
 const mobileNavVariants = cva(
-  "fixed z-40 items-center justify-center transition-[height,width,right,top] duration-1000 ease-in-out rounded-full overscroll-none pointer-events-none",
+  "fixed z-40 items-center justify-center transition-[height,width,right,top] rounded-full overscroll-none pointer-events-none",
   {
     variants: {
       open: {
         true: [
-          "bg-black w-[2000px] h-[2000px] -top-1/2 -right-[200%] xs:-right-1/2",
+          "bg-black w-[2000px] h-[2000px] -top-1/2 -right-[200%] xs:-right-1/2 duration-500",
         ],
-        false: ["w-10 h-10 bg-transparent  top-5 right-5"],
+        false: ["w-10 h-10 bg-transparent  top-5 right-5 duration-0"],
       },
     },
   },

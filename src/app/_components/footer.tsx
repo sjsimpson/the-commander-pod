@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { SpotifyButton } from "./spotify-button";
 import { YouTubeButton } from "./youtube-button";
+import Marquee from "react-fast-marquee"
 
 const FooterVariants = cva(
   "z-10 flex w-screen flex-col items-center justify-center gap-20 pb-32 pt-20",
@@ -30,8 +31,11 @@ export function Footer(props: FooterProps) {
     <footer>
       {!hideBanner && (
         <section className={FooterVariants({ style })}>
-          <div className="flex h-[72px] w-full items-center justify-center text-center text-5xl font-bold">
-            <span>SUBSCRIBE TO OUR PODCAST • SUBSCRIBE TO OUR PODCAST</span>
+          <div className="flex h-[72px] w-full items-center justify-center text-center text-5xl font-bold overflow-hidden text-nowrap">
+            <Marquee autoFill>
+              <span>SUBSCRIBE TO OUR PODCAST</span>
+              <span className="px-3">•</span>
+            </Marquee>
           </div>
           <div className="flex flex-col items-center justify-center gap-8">
             <div className="flex flex-col gap-4 sm:flex-row">
