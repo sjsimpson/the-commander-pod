@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
             {children}
           </TRPCReactProvider>
         </main>
+        <Analytics />
       </body>
     </html>
   );
