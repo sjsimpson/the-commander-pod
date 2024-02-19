@@ -8,6 +8,7 @@ import { CommanderText } from "./commander-text";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
+  const youtubeEpisode = await api.youtube.getMostRecentEpisode.query()
   const card = await api.card.getRandomCard.query({
     query: "is:commander colors<=2 -is:digital -set_type:funny",
   });
@@ -35,7 +36,7 @@ export default async function Home() {
           </div>
           <iframe
             className="rounded-xl sm:h-[315px] sm:w-[560px]"
-            src="https://www.youtube.com/embed/RCxyBAxMAtc?si=diDICAagtqAUMyjq"
+            src={youtubeEpisode}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

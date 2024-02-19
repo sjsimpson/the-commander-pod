@@ -1,8 +1,13 @@
+import { api } from "~/trpc/server";
+
 import { Footer } from "../_components/footer";
 import { SpotifyButton } from "../_components/spotify-button";
 import { YouTubeButton } from "../_components/youtube-button";
 
-export default function Episodes() {
+export default async function Episodes() {
+  const youtubeEpisode = await api.youtube.getMostRecentEpisode.query()
+  const spotifyEpisode = await api.spotify.getMostRecentEpisode.query()
+
   return (
     <>
       <div className="mt-10 flex flex-col">
@@ -10,7 +15,7 @@ export default function Episodes() {
           <div className="relative flex w-[1200px] flex-col items-center justify-center gap-10 pb-32 pt-20">
             <iframe
               className="rounded-xl sm:h-[315px] sm:w-[560px]"
-              src="https://www.youtube.com/embed/RCxyBAxMAtc?si=diDICAagtqAUMyjq"
+              src={youtubeEpisode}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -22,7 +27,7 @@ export default function Episodes() {
           <div className="relative flex w-[1200px] flex-col items-center justify-center gap-10 pb-32 pt-20">
             <iframe
               className="rounded-xl sm:h-[315px] sm:w-[560px]"
-              src="https://open.spotify.com/embed/episode/6XVagynY9KShPvCODjnOrV/video?utm_source=generator"
+              src={spotifyEpisode}
               allowFullScreen
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"

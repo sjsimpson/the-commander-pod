@@ -22,6 +22,11 @@ export const youtubeRouter = createTRPCRouter({
 
     return res.data;
   }),
+  getMostRecentEpisode: publicProcedure.query(async () => {
+    const episodeUrl = process.env.YOUTUBE_EPISODE
+
+    return episodeUrl
+  })
 });
 
 interface YoutubeThumbnail {
