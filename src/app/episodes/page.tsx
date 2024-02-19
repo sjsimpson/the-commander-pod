@@ -4,9 +4,12 @@ import { Footer } from "../_components/footer";
 import { SpotifyButton } from "../_components/spotify-button";
 import { YouTubeButton } from "../_components/youtube-button";
 
+// WARN: This is a bandaid solution for current TRPC problems
+export const dynamic = "force-dynamic";
+
 export default async function Episodes() {
-  const youtubeEpisode = await api.youtube.getMostRecentEpisode.query()
-  const spotifyEpisode = await api.spotify.getMostRecentEpisode.query()
+  const youtubeEpisode = await api.youtube.getMostRecentEpisode.query();
+  const spotifyEpisode = await api.spotify.getMostRecentEpisode.query();
 
   return (
     <>
