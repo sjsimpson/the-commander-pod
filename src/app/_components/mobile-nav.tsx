@@ -5,7 +5,11 @@ import Link from "next/link";
 import { NAVLINKS } from "~/lib/links";
 
 const mobileNavVariants = cva(
-  "fixed z-40 items-center justify-center transition-[height,width,right,top] rounded-full overscroll-none pointer-events-none",
+  [
+    "fixed z-40 items-center justify-center",
+    "transition-[height,width,right,top] rounded-full",
+    "overscroll-none pointer-events-none",
+  ],
   {
     variants: {
       open: {
