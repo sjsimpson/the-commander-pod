@@ -1,74 +1,32 @@
-import axios from "axios";
+import { youtube } from "@googleapis/youtube";
 
+import { env } from "~/env";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const youtubeRouter = createTRPCRouter({
-  getChannel: publicProcedure.query(async () => {
-    const apiKey = process.env.GOOGLE_API_KEY;
+  getMostRecentVideo: publicProcedure.query(async () => {
+    const apiKey = env.GOOGLE_API_KEY;
+    const defaultYoutubeVideo = env.DEFAULT_YOUTUBE_VIDEO;
 
-    const res = await axios.get<YoutubeResponse>(
-      "https://www.googleapis.com/youtube/v3/channels",
-      {
-        headers: {
-          Accept: "application/json",
-        },
-        params: {
-          key: apiKey,
-          part: "contentDetails,snippet",
-          id: "UCOwX8yocmkjkJ3hCbwNY7Xg",
-        },
-      },
-    );
+    const youtubeClient = youtube({ version: "v3", auth: apiKey });
 
-    return res.data;
-  }),
-  getMostRecentEpisode: publicProcedure.query(async () => {
-    return process.env.YOUTUBE_EPISODE;
+    const res = await youtubeClient.activities.list({
+      part: ["contentDetails"],
+      channelId: "UCOwX8yocmkjkJ3hCbwNY7Xg",
+      fields: "items(contentDetails/upload)",
+    });
+
+    const mostRecentVideoId =
+      res.data.items?.at(0)?.contentDetails?.upload?.videoId;
+
+    if (!mostRecentVideoId) {
+      return buildVideoUrl(defaultYoutubeVideo);
+    }
+
+    return buildVideoUrl(mostRecentVideoId);
   }),
 });
 
-interface YoutubeThumbnail {
-  url: string;
-  width: number;
-  height: number;
-}
-
-interface YoutubeChannel {
-  title: string;
-  description: string;
-  customUrl: string;
-  publishedAt: string;
-  thumbnails: {
-    default: YoutubeThumbnail;
-    medium: YoutubeThumbnail;
-    high: YoutubeThumbnail;
-  };
-  localized: {
-    title: string;
-    description: string;
-  };
-  country: "US";
-}
-
-interface YoutubeResponseItem {
-  kind: string;
-  etag: string;
-  id: string;
-  snippet: YoutubeChannel;
-  contentDetails: {
-    relatedPlaylists: {
-      likes: string;
-      uploads: string;
-    };
-  };
-}
-
-interface YoutubeResponse {
-  kind: string;
-  etag: string;
-  pageInfo: {
-    totalResults: number;
-    resultsPerPage: number;
-  };
-  items: YoutubeResponseItem;
+function buildVideoUrl(videoId: string) {
+  return `https://youtube.com/embed/${videoId}`;
 }

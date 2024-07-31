@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins } from "next/font/google";
+import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -32,7 +33,7 @@ export default function RootLayout({
         className={`font-sans ${poppins.className} flex h-screen w-screen flex-col`}
       >
         <main className="flex h-screen w-screen flex-col items-center overflow-x-hidden">
-          <TRPCReactProvider>
+          <TRPCReactProvider headers={headers()}>
             <Header />
             {children}
           </TRPCReactProvider>

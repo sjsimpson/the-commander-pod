@@ -4,11 +4,9 @@ import { Footer } from "./_components/footer";
 import { CardImage } from "./card-image";
 import { CommanderText } from "./commander-text";
 
-// WARN: This is a bandaid solution for current TRPC problems
-export const dynamic = "force-dynamic";
-
 export default async function Home() {
-  const youtubeEpisode = await api.youtube.getMostRecentEpisode.query();
+  const youtubeEpisode = await api.youtube.getMostRecentVideo.query();
+
   const card = await api.card.getRandomCard.query({
     query: "is:commander colors<=2 -is:digital -set_type:funny",
   });
